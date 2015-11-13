@@ -1,0 +1,52 @@
+doctype html
+html(ng-app='myApp')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    block css
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap-theme.min.css')
+      link(rel='stylesheet', href='/css/style.css')
+      style.
+        body {background-color:none}
+        h1   {color:blue}
+        p    {color:green}
+        div {
+        display: block;
+        }
+        #canvas {
+        background-color:none;
+        color:white;
+        text-align:center;
+        padding:100px;
+        height:400px;
+        width:800px;
+        /* float:left; */
+        }
+        #dou {
+        background-color:none;
+        color:white;
+        text-align:center;
+        margin-top:100px;
+        padding:100px;
+        height:400px;
+        width:800px;
+        /* float:left; */
+        }
+    block js
+      script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.5/angular-chart.min.js')
+      script(src='/js/myApp.js')
+      script(src='/components/jquery/dist/jquery.min.js')
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')
+  body
+    block content
+    div(ng-controller='titre')
+      title  {{title}} 
+
+    #canvas(ng-controller='LineCtrl')
+      canvas#line.chart.chart-line(width='304', height='228', chart-data='data', chart-labels='labels', chart-legend='true', chart-series='series', chart-click='onClick')
+    #dou(ng-controller='DoughnutCtrl')
+      canvas#doughnut.chart.chart-doughnut(chart-data='data', chart-labels='labels')
