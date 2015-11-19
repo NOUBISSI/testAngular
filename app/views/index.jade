@@ -25,9 +25,14 @@ block content
             li.active
               a(href='#') Debug
     h3 Are you happy ?
-    a.btn.btn-primary(href='#') yes
-    a.btn.btn-primary(href='#') no
-    a.btn.btn-primary(href='#') I don't know
-    br
-    br
-    a.btn.btn-danger(href='#' style='width: 100%') Reset votes
+    .container
+      div.col-md-4
+        a.btn.btn-primary.btn-block(href='#') yes
+      div.col-md-4
+        a.btn.btn-primary.btn-block(href='#') no
+      div.col-md-4
+        a.btn.btn-primary.btn-block(href='#') I don't know
+      br
+      br
+      div.col-md-12
+        a.btn.btn-danger.btn-block(href='#' style='width: 100%') Reset votes
