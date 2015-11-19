@@ -27,7 +27,8 @@ var config = {
       name: 'tweb'
     },
     port: process.env.PORT,
-    db: 'mongodb://admin:pass1234*@ds047524.mongolab.com:47524/heroku_l6n3q8x9'
+    db: process.env.MONGOLAB_URI
+    // db: 'mongodb://admin:pass1234*@ds047524.mongolab.com:47524/heroku_l6n3q8x9'
   }
 };
 

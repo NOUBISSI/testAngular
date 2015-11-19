@@ -2,14 +2,19 @@ extends layout
 
 block content
   .container.home
-    .alert.alert-info
-      p #{nbPolls} polls have been created in total
-      p #{nbPollsCreatedThisWeek} polls have been created this week
-      p #{nbPollsOpen} polls are still open (state = 'active')
-
-    .panel.panel-danger
-      .panel-heading GET requests - Get polls
-
-      .panel-body
-        a(href='/polls') Show details of polls !
+    .btn-group.btn-group-justified
+      a.btn.btn-default(href='#') Left
+      a.btn.btn-default(href='#') Middle
+      a.btn.btn-default(href='#') Right
+    .btn-group.btn-group-justified
+      a.btn.btn-default(href='#') Left
+      a.btn.btn-default(href='#') Middle
+      a.btn.btn-default(href='#') Right
+    // ul.nav.nav-pills
+    //       li.active
+    //         a(href='#') Home
+    //       li
+    //         a(href='#') Profile
+    //       li
+    //         a(href='#') Disabled
 
