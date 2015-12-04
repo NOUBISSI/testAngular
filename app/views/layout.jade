@@ -35,18 +35,34 @@ html(ng-app='myApp')
         }
     block js
       script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js')
+      script(src='/socket.io/socket.io.js')
+      script(src='/components/angular-socket-io/socket.js')
       script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js')
       script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.5/angular-chart.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-animate.js')
       script(src='/js/myApp.js')
       script(src='/components/jquery/dist/jquery.min.js')
+
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
   body
-    block content
-    div(ng-controller='titre')
+    div(ng-controller='socket.io.contoller')
+      block content
+      // div(ng-controller='titre')
       title  {{title}} 
 
-    #canvas(ng-controller='LineCtrl')
-      canvas#line.chart.chart-line(width='304', height='228', chart-data='data', chart-labels='labels', chart-legend='true', chart-series='series', chart-click='onClick')
-    #dou(ng-controller='DoughnutCtrl')
-      canvas#doughnut.chart.chart-doughnut(chart-data='data', chart-labels='labels')
+      #canvas(ng-controller='LineCtrl')
+        canvas#line.chart.chart-line(width='304', height='228', chart-data='data', chart-labels='labels', chart-legend='true', chart-series='series', chart-click='onClick')
+
+      #dou()
+        canvas#doughnut.chart.chart-doughnut(chart-data='data', chart-labels='labels')
+      br
+      br
+      br
+      div()
+        button.btn.btn-lg.btn-primary.btn-block(name='Submit', value='Login', type='Submit') it is now :  {{currentTime}}
+        button.btn.btn-lg.btn-primary.btn-block(name='Submit', value='Login', type='Submit') There are now  {{ userNumber }} users connected
+        button.btn.btn-lg.btn-primary.btn-block(name='Submit', value='Login', type='Submit') There are now  {{ yes }} users connected
+        h1   {{ btn }}
+
+

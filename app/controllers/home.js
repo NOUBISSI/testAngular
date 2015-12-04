@@ -7,6 +7,13 @@ module.exports = function(app) {
    app.use('/', router);
 };
 
+
+
+// intégration de socket.io dans express
+
+
+
+
 // Affiche la page d'accueil
 router.get('/', function(req, res, next) {
 
